@@ -1,6 +1,6 @@
 <ul>
     <li>is_object() => verifica se uma variavel é um objeto;</li>
-    <li>get_class() => verifica a classe de um classe;</li>
+    <li>get_class() => verifica a classe de uma classe;</li>
     <li>method_exists() => verifica se um metodo existe em um objeto;</li>
 </ul>
 
