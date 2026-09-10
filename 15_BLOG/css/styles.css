@@ -102,7 +102,31 @@ body {
 
 }
 
-/* FOOTER */
+/*POST --> tag aside*/
+.post-container {
+    display: grid;
+    grid-template-columns: 75% 25%;
+    grid-template-rows: auto;
+    grid-template-areas: "main sidebar";
+    max-width: 1200px;
+    width: 100%;
+    margin: 30px auto 250px;
+}
+.post-container main{
+  grid-area: main;
+  min-width: 0;
+}
+.content-container img {
+    max-width: 100%;
+    height: auto;
+}
+#nav-container {
+    grid-area: sidebar;
+    padding-left: 20px;
+    margin-left: 20px;
+   
+}
+/* FOOTER */a
 footer {
     width:100%;
     position: absolute;
@@ -114,6 +138,8 @@ footer {
 
 
 }
+
+
 
 /* NAVBAR */
 
