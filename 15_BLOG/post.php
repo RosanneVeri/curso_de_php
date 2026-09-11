@@ -13,17 +13,17 @@ if (isset($_GET["id"])) {
     }
 }
 ?>
-<div class="post-container">
+<div id="post-container">
 
     <main >
         
         <div class="content-container">
             
-            <h1 class="main-title"><?= $currentPost['title'] ?></h1><br>
+            <h1 id="main-title"><?= $currentPost['title'] ?></h1><br>
             
-            <p class="post-description"><?= $currentPost['description'] ?></p><br>
+            <p id="post-description"><?= $currentPost['description'] ?></p><br>
         
-            <div class="img-containe">
+            <div class="img-container">
             
                 <img src="<?= $BASE_URL ?>/img/<?= $currentPost['img'] ?>" alt="<?= $currentPost['title'] ?>">
             
@@ -37,22 +37,24 @@ if (isset($_GET["id"])) {
     </main>
     <aside id="nav-container">
         
-        <h3 class="tags-title">Tags</h3>
+        <h3 id="tags-title">Tags</h3>
         
-        <ul class="tag-list">
+        <ul id="tag-list">
             
             <?php foreach ($currentPost['tags'] as $tag): ?>
                 <li><a href="#"><?= $tag ?></a></li>
             <?php endforeach; ?>
                 
         </ul>
-            <h3 class="categories-title">Categorias</h3>
-            <ul id="categories-list">
-                
-            <?php foreach ($categories as $categoria): ?>
-                <li><a href="#"><?= $categoria ?></a></li>
-                <?php endforeach; ?>
-            </ul>             
+
+        <h3 id="categories-title">Categorias</h3>
+        
+        <ul id="categories-list">
+            
+        <?php foreach ($categories as $categoria): ?>
+            <li><a href="#"><?= $categoria ?></a></li>
+        <?php endforeach; ?>
+        </ul>             
                 
     </aside>
             

@@ -23,18 +23,20 @@ body {
 
 /*HOME*/
 
-#title.container {
-    min-width: 500px;
-    align-items: center;
+#title-container {
+    min-width: 300px;
+    text-align: center;
     margin-top: 30px;
 
 }
-#title.container h1{
-    font-size: 50px;
+#title-container h1{
+    font-size: 30px;
+    
 
 }
-#title.container p{
+#title-container p{
     margin-top: 10px;
+    align-items: center;
     text-transform: uppercase;
     color:#999
 
@@ -102,8 +104,9 @@ body {
 
 }
 
-/*POST --> tag aside*/
-.post-container {
+/*POST */
+
+#post-container {
     display: grid;
     grid-template-columns: 75% 25%;
     grid-template-rows: auto;
@@ -112,7 +115,7 @@ body {
     width: 100%;
     margin: 30px auto 250px;
 }
-.post-container main{
+#post-container main{
   grid-area: main;
   min-width: 0;
 }
@@ -120,13 +123,71 @@ body {
     max-width: 100%;
     height: auto;
 }
+.post-content {
+    line-height: 1.8;
+    margin: 10px;
+
+}
+.img-container {
+    margin-bottom: 30px;
+}
+.img-container img{
+    width: 60%;
+}
+#main-title {
+    font-size: 36px;
+    margin-bottom: 30px;
+}
+#post-description {
+    font-style: italic;
+    margin-bottom: 40px;
+}
 #nav-container {
     grid-area: sidebar;
     padding-left: 20px;
     margin-left: 20px;
    
 }
-/* FOOTER */a
+
+/* POST ASIDE */
+.nav-container {
+    grid-area: sidebar;
+
+}
+#title-container{
+    align-items: center;
+    text-transform: uppercase;
+}
+#tags-title, #categories-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+    background-color: #000;
+    color: #FFF;
+    text-align:center;
+    padding: 10px;
+    font-weight: 300;
+}
+#tag-list, #categories-list {
+    list-style: none;
+
+}
+#tag-list li, #categories-list li {
+    margin-bottom: 10px;
+    
+
+}
+#tag-list a, #categories-list a {
+    color: #666;
+    transition: .5s; 
+
+
+}
+#tag-list a:hover, #categories-list a:hover {
+    color: #000;
+
+
+}
+/* FOOTER */
 footer {
     width:100%;
     position: absolute;
@@ -181,3 +242,41 @@ footer {
 }
 
 
+/* MOBILE */
+
+@media(max-width:480px) {
+    /* HOME */
+    header {
+        width: 100%;
+        
+
+    }
+    #logo {
+        display:block;
+        position: relative;
+        margin: 0 auto;
+        left: 0;
+        width: 50px;
+    }
+    #navbar {
+        display:none;
+    }
+    #title-container {
+        min-width: 100%;
+        margin-top:20px;
+    }
+    #posts-container {
+        margin-top:20px;
+    }
+    .post-box{
+        flex: 100% 1 0;
+        padding: 20px;
+        margin: 0;
+    }
+    
+    /* POST */
+
+    #post-container {
+        grid-template-columns:100%;
+    }
+}
