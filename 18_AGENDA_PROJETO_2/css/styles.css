@@ -10,7 +10,7 @@
  }
 
  /* HOME */
-
+/*constacts-table tecnica de centralizacao css*/
  #contacts-table {
    max-width: 800px;
    margin: 0 auto;
@@ -31,6 +31,7 @@
    margin-right: 5px;
 
  }
+ /* Tecnica para limpar icones*/
  .delete-btn {
    background-color: transparent;
    border: none;
@@ -58,4 +59,20 @@
    max-width: 500px;
    margin: 0 auto;
    margin-top: 30px;
+ }
+
+ /* SHOW / CONTATO INDIVIDUAL */
+
+ #view-contact-container {
+  max-width: 500px;
+  margin: 0 auto;
+  
+ }
+ .bold {
+  font-weight: bold;
+ }
+ #back-link-constiner {
+  display: block;
+  width: 500px;
+  margin:30px auto 0;
  }
