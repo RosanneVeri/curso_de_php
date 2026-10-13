@@ -2,7 +2,7 @@
 //HEADER
 include_once("templates/header.php");
 
-//show.php mostra um contato apenas conforme passa id é passado
+//show.php mostra um contato apenas conforme o id é passado
 ?>
 
 
