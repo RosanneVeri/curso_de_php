@@ -15,9 +15,9 @@
    max-width: 800px;
    margin: 0 auto;
  }
- #contacts-table thead {
+ #contacts-table thead th  {
    color: #fff;
-   background-image: #2a8cf5;
+   background-color: #2a8cf5;
  }
  .actions {
    text-align: right;
@@ -30,6 +30,9 @@
    font-size: 18px;
    margin-right: 5px;
 
+ }
+ .delete-form {
+  display: inline-block;
  }
  /* Tecnica para limpar icones*/
  .delete-btn {
@@ -90,7 +93,14 @@
  /*CREATE*/
  #create-form,
  #edit-form {
-  max-width: 500;
+  max-width: 500px;
   margin: 0 auto;
+
+ }
+ /*MOBILE*/
+ @media(max-width: 480px) {
+  #home-link{
+    display: none;
+  }
 
  }

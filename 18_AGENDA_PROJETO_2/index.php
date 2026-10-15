@@ -5,19 +5,20 @@ include_once("templates/header.php");
 
 
 <div class="container">
-    <p id="msg">Testando mensagens</p>
+  
     <?php if (isset($printMsg) && $printMsg != ''): ?>
         <p id="msg"><?= $printMsg ?></p>
     <?php endif; ?>
     <h1 id="main-title">Minha Agenda</h1>
     <?php if(count($contacts) > 0): ?>
-    <table class="table" id = "contacts-table">
+    <table class="table tamanho" id = "contacts-table">
         <thead>
             <tr>
                 <th scope="col">#</th>
                 <th scope="col">Nome</th>
                 <th scope="col">Telefone</th>
                 <th scope="col">Observacão</th>
+                <th scope="col"></th>
                
             </tr>
         </thead>
@@ -30,8 +31,13 @@ include_once("templates/header.php");
                 <td scope="row"> <?= $contact['observations'] ?> </td>
                  <td class="actions">
                     <a href="<?= $BASE_URL ?>show.php?id=<?= $contact["id"] ?>"><i class="fas fa-eye check-icon"></i></a>
-                    <a href="#"><i class="far fa-edit edit-icon"></i></a>
-                    <button type="submit" class="delete-btn"><i class="fas fa-times delete-icon"></i></button>
+                    <a href="<?= $BASE_URL ?>edit.php?id=<?= $contact["id"] ?>"><i class="far fa-edit edit-icon"></i></a>
+                    <form class="delete-form" action="<?= $BASE_URL ?>config/process.php" method="POST">
+                        <input type="hidden" name="type" value="delete">
+                        <input type="hidden" name="id" value="<?= $contact["id"] ?>">
+
+                        <button type="submit" class="delete-btn"><i class="fas fa-times delete-icon"></i></button>
+                    </form>
                 </td>
             </tr>
 
