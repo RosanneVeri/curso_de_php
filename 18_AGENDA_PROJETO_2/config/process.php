@@ -70,6 +70,7 @@ if (!empty($data)) {
         header("Location:" . $BASE_URL . "../index.php");
 
     } elseif ($data["type"] === "delete") {
+        
 
         $id = $data["id"];
 
