@@ -12,7 +12,26 @@ class CarDAO implements CarDAOInterface
 
 
 
-    public function findAll() {}
+    public function findAll()
+    {
+        $cars = [];
+
+        $stmt = $this->conn->prepare("SELECT * FROM car");
+        $stmt->execute();
+        $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        foreach ($data as $car) {
+            $id = $car["id"];
+            $brand = $car["brand"];
+            $color = $car["color"];
+            $km = $car["km"];
+
+            $car = new Car($id, $brand, $color, $km);
+            $cars[] = $car;
+        }
+
+        return $cars;
+    }
     public function create(Car $car)
     {
 
