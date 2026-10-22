@@ -14,7 +14,7 @@ $cars = $carDao->findAll();
         <input type="text" name="brand" placeholder="Insira a marca">
     </div>
     <div>
-        <label for="km">Kilometragem:</label>
+        <label for="km">Quilometragem:</label>
         <input type="text" name="km" placeholder="Insira a kilometragem">
     </div>
     <div>
