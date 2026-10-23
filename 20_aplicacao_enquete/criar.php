@@ -2,6 +2,7 @@
 <?php
 
 require __DIR__ . '/template.php';
+require __DIR__ . '/lib.php';
 
 //trazendo o template home para o index.php
 render(view: 'create', vars: [

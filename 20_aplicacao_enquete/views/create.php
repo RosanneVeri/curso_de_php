@@ -1,6 +1,42 @@
+<?php
+$db = pdo();
+
+$error = '';
+if ($_SERVER['REQUEST_METHOD'] === "POST") {
+
+    $q = $_POST['question'];
+
+    $labels = array_values(array: array_map(callback: 'trim', array: $_POST['options'] ?? []));
+
+    print_r($labels);
+
+    if ($q === '' || count(value: $labels) < 2) {
+
+        $error = "Informe a pergunta e pelo menos 2 opcões...";
+    } else {
+
+        $db->beginTransaction();
+
+        try {
+
+            $st = $db->prepare("INSERT INTO polls(question) VALUES (?)");
+            $st->execute(params: [$q]);
+            $pid = (int)$db->lastInsertId();
+            $st = $db->prepare(query: "INSERT INTO poll_options (poll_id, label)");
+            } catch (Throwable $e) {
+
+            $db->rollBack();
+            $error = 'Erro ao criar enquete...';
+        }
+    }
+}
+
+
+?>
+
 <div class="card">
     <div class="card-body">
-        <form class="vstack gap-2" method="post">
+        <form class="vstack gap-2" method="POST">
             <div class="form-floating">
                 <input
                     type="text"
